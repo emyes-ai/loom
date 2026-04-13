@@ -161,28 +161,6 @@ Toggle **Desktop / Tablet / Mobile** to see the design at each breakpoint with a
 
 ---
 
-## Generative UI Export
-
-The **🚀 Generative UI** button scaffolds a complete, deployable Next.js app from your design:
-
-```
-your-component-agent-ui/
-├── app/
-│   ├── page.tsx              ← chat UI using useChat
-│   └── api/chat/route.ts     ← streamText route with your component as a tool
-├── components/
-│   └── YourComponent.tsx     ← typed React component with Props interface
-├── lib/
-│   └── schema.ts             ← Zod schema for AI SDK tool calling
-├── package.json
-├── tsconfig.json
-└── next.config.ts
-```
-
-Unzip → `npm install` → `npm run dev` → deploy to Vercel. The AI agent calls the component by name and streams structured props to it at runtime.
-
----
-
 ## Component Registry
 
 **⊕ Register** saves any design as a named, callable component:
@@ -256,31 +234,6 @@ Kill any process using port 5173 before running `pnpm dev`.
 
 ---
 
-## Development
-
-```bash
-# Prerequisites: Rust, Node.js 18+, pnpm
-
-# Install dependencies
-pnpm install
-
-# Start dev server
-cd apps/desktop && pnpm dev
-
-# TypeScript typecheck
-cd apps/renderer && pnpm typecheck
-
-# Rust check (no binary output)
-cargo check --manifest-path apps/desktop/src-tauri/Cargo.toml
-
-# Build installer
-cd apps/desktop && pnpm tauri build
-# Output: apps/desktop/src-tauri/target/release/bundle/nsis/Loom_0.2.0_x64-setup.exe
-```
-
-> **Windows note:** Run `taskkill /F /IM loom.exe` before rebuilding to release the file lock.
-
----
 
 <div align="center">
 
